@@ -1,4 +1,3 @@
-# This is a sample Python script.
 import PySimpleGUI as sg
 import time
 
@@ -12,6 +11,7 @@ BTN_SKIP_REST = "Enough 🤖"
 POMODORO_DURATION = 25
 REST_DURATION = 5
 SHOULD_REST = False
+
 
 class PomCounter:
     def __init__(self):
@@ -59,8 +59,8 @@ class PomTimer:
 
     def time_left_str(self):
         time_left = time.gmtime(self.time_left())
-        mins = PomTimer.time_to_two_digits(time_left[4])
-        secs = PomTimer.time_to_two_digits(time_left[5])
+        mins = self.time_to_two_digits(time_left[4])
+        secs = self.time_to_two_digits(time_left[5])
         return ":".join([mins, secs])
 
     def should_countup(self):
@@ -100,20 +100,13 @@ window = sg.Window(
     font=('Segoe UI Emoji', 11),
     finalize=True,
     margins=(50, 30)
-    # background_color=
-    # button_color=['black', 'white']
-    # font=("GOST Type A", 14)
-    # grab_anywhere=True,
-    # use_custom_titlebar=True,
-    # titlebar_background_color=None
 )
 
 pc = PomCounter()
 pt = PomTimer()
 rt = PomTimer()
-# Press the green button in the gutter to run the script.
+
 if __name__ == '__main__':
-    # print_hi('PyCharm')
     while True:  # Event Loop
         event, values = window.read(timeout=100)
         if rt.should_countup():
@@ -152,4 +145,3 @@ if __name__ == '__main__':
         if event == sg.WIN_CLOSED or event == 'Q':
             break
     window.close()
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
