@@ -15,19 +15,15 @@ SHOULD_REST = False
 
 class PomCounter:
     def __init__(self):
-        # self.counter = count
         self.pomstring = ''
 
     def reset(self):
-        # self.counter = 0
         self.pomstring = ''
 
     def countup(self):
-        # self.counter += 1
         self.pomstring += '🍅'
 
     def pom_string(self):
-        # i = 0
         if self.pomstring == '':
             return START_STRING
         else:
@@ -38,9 +34,7 @@ class PomTimer:
     def __init__(self):
         self.time_of_start = 0.0
         self.time_of_end = 0.0
-        # self.was_started = False
         self.time_is_up = False
-        # self.time_left = time_amount*60
 
     def reset(self):
         self.__init__()
