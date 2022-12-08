@@ -86,14 +86,14 @@ layout = [[sg.Text('Pomodoro\nTimer', font=("Tahoma", 16), grab=True, justificat
 window = sg.Window(
     "Pomodoro Timer",
     layout,
-    size=(280, 360),
+    size=(240, 240),
     resizable=True,
     keep_on_top=True,
     no_titlebar=True,
     element_justification='center',
     font=('Segoe UI Emoji', 11),
     finalize=True,
-    margins=(50, 30)
+    # margins=(0, 0)
 )
 
 pc = PomCounter()
